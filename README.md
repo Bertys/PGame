@@ -1,4 +1,5 @@
 # PGame
 Public Game
 
-Aquí vendria la descripción del proyecto Juego 1.
+Esto es la descripción del proyecto: Juego con carga de Tiles con el Tiled, 
+Está básico, tal como venía en el ejemplo.
