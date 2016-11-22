@@ -22,6 +22,7 @@ var app = {
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
+        //error raro, Uncaught TypeError: Cannot read property 'querySelector' of null
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
@@ -50,28 +51,10 @@ document.getElementById("b1").addEventListener("click", function(){
 });
 
 document.getElementById("b3").addEventListener("click", function(){
-    //NOTOCAR VA BIEN // en ello;
+    //Uncaught ReferenceError: initMap11 is not defined //
     initMap();
 });
 document.getElementById("b5").addEventListener("click", function(){
     //NOTOCAR VA BIEN;
     getLocation();
 });
-
-
-function initMap11(){
-$('#mapcanvas').css('height', $('.ons-page-inner:last').height() + 250);
-//$('#mapcanvas').css('width', 100%);
-//$('#mapcanvas').css('height', 100%);
-  // Define a div tag with id="map_canvas"
-  var mapDiv = document.getElementById("mapcanvas");
-
-  // Initialize the map plugin
-  var map = plugin.google.maps.Map.getMap(mapDiv);
-
-  // You have to wait the MAP_READY event.
-  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
-}
-
-function onMapInit(map) {
-}
