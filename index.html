@@ -5,21 +5,28 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/index2.css">
 
 
   </head>
   <body>
-      <!-- Start of MAIN page -->
+      
+<div data-role="page" id="principal">
+  <div data-role="header" data-position="fixed" class="headers">
     
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="principal" data-url="principal">
-	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P0</h1>  
-		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
-		<a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
-	</div><!-- /header -->
-    
-    <div data-role="main" class="ui-content">
-        
+      <div data-role="controlgroup" data-type="horizontal">
+      <a href="#ruta" class="ui-btn">Ruta</a>
+        <a href="#buscar" class="ui-btn">Buscar</a>
+        <a href="#favoritos" class="ui-btn">Favoritos</a>
+      <a href="#opciones" class="ui-btn">Opciones</a>
+      <a href="#principal" class="ui-btn">Back</a>
+    </div>
+      
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>PAGINA PRINCIPAL.</p>
     <form>
       <div class="ui-field-contain">
         <label for="Latitud">Latitud:</label>
@@ -42,44 +49,31 @@
     <div id="demo"></div>
     <div id="id01"></div>
     </div>
+  </div>
 
-    </div>
-	<!-- /content -->
-    
-	<div data-role="footer" data-position="fixed">
-		<h4>Menú inferior P0</h4>    
-	</div><!-- /footer -->
-    
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Mapa</a></li>
-		</ul>
-	</div><!-- /panel -->
-    
-	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
-			  
-	</div><!-- /panel lateral derecho-->
+  <div data-role="footer">
+    <h1>Incidencias</h1>
+  </div>
 </div>
-                    <!-- End of MAIN page -->
-      
-                    <!-- Start of 2nd page -->
-    
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="one" data-url="one">
-	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P0</h1>  
-		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
-		<a href="#add-form1" data-icon="gear" data-iconpos="notext">Add</a>
-	</div><!-- /header -->
-    
-  <div>
+
+<div data-role="page" id="ruta">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#ruta" class="ui-btn">Ruta</a>
+        <a href="#buscar" class="ui-btn">Buscar</a>
+        <a href="#favoritos" class="ui-btn">Favoritos</a>
+      <a href="#opciones" class="ui-btn">Opciones</a>
+      <a href="#principal" class="ui-btn">Back</a>
+    </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>RUTA.</p>
+    <div>
     
     
     
     <button type="button" id="b3">Muestra Mapa!</button>
-    <button type="button" id="b33">Centra Mapa!</button>
+    <button type="button" id="b33">Ves a la poliline!</button>
 
     
     <div>
@@ -88,70 +82,88 @@
     </div>  
     </div> 
 </div>
-        
-	<!-- /content -->
-    
-	<div data-role="footer" data-position="fixed">
-		<h4>Menú inferior P0</h4>    
-	</div><!-- /footer -->
-    
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Mapa</a></li>
-		</ul>
-	</div><!-- /panel -->
-    
-	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form1">
-			  
-	</div><!-- /panel lateral derecho-->
+  </div>
+
+  <div data-role="footer">
+    <h1>Incidencias</h1>
+  </div>
 </div>
-<!-- End of 1st page -->
       
-      <!-- Start of 3rd page -->
-    
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="two" data-url="two">
-	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P2</h1>  
-		<a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
-		<a href="#add-form2" data-icon="gear" data-iconpos="notext">Add</a>
-	</div><!-- /header -->
-    
-	
-    <button type="button" id="b4">aaaaaa</button>
-        
-        
-	<!-- /content -->
-    
-	<div data-role="footer" data-position="fixed">
-		<h4>Menú inferior P0</h4>    
-	</div><!-- /footer -->
-    
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Mapa</a></li>
-		</ul>
-	</div><!-- /panel -->
-    
-	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form2">
-			  
-	</div><!-- /panel lateral derecho-->
+<div data-role="page" id="favoritos">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#ruta" class="ui-btn">Ruta</a>
+        <a href="#buscar" class="ui-btn">Buscar</a>
+        <a href="#favoritos" class="ui-btn">Favoritos</a>
+      <a href="#opciones" class="ui-btn">Opciones</a>
+      <a href="#principal" class="ui-btn">Back</a>
+    </div>
 </div>
-                    <!-- End of 3rd page -->   
+  <div data-role="main" class="ui-content">
+    <p>FAVORITOS.</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+      
+      
+      <div data-role="page" id="opciones">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#ruta" class="ui-btn">Ruta</a>
+        <a href="#buscar" class="ui-btn">Buscar</a>
+        <a href="#favoritos" class="ui-btn">Favoritos</a>
+      <a href="#opciones" class="ui-btn">Opciones</a>
+      <a href="#principal" class="ui-btn">Back</a>
+    </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>OPCIONES.</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+      
+      
+      
+      
+      <div data-role="page" id="buscar">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#ruta" class="ui-btn">Ruta</a>
+        <a href="#buscar" class="ui-btn">Buscar</a>
+        <a href="#favoritos" class="ui-btn">Favoritos</a>
+      <a href="#opciones" class="ui-btn">Opciones</a>
+      <a href="#principal" class="ui-btn">Back</a>
+    </div>
+       </div>
+  <div data-role="main" class="ui-content">
+    <p>BUSCAR.</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+    
 
 
-    <script src="js/jquery-1.11.0.js"></script><!--jquery.mobile-1.4.0.min.js
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script><!--jquery.mobile-1.4.0.min.js
     <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    
+      
+      
+         <script src="js/paradas.js"></script>
+          <script src="js/geo.js"></script>
+    <script src="js/buscaparadas.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script src="js/paradas.js"></script>
-    <script src="js/geo.js"></script>
-      <script src="js/buscaparadas.js"></script>
+
+
   </body>
 </html>
