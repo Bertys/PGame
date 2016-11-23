@@ -5,125 +5,173 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
-      <link rel="stylesheet" href="js/index.css">
-      <link rel="stylesheet" href="js/index2.css">
-
-
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/index2.css">
   </head>
   <body>
       
-      
-      
-<div data-role="page" id="pageone">
+<div data-role="page" id="principal">
+    
   <div data-role="header" data-position="fixed" class="headers">
-    
-      <a href="#pagetwo">Ruta</a>
-      <a href="#pagethree">Favoritos</a>
-      <a href="#pagefour">Opciones</a>
-      <a href="#pagefive">Buscar</a>
-      <a href="#pageone">Back</a>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-    
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-</div>
-
-<div data-role="page" id="pagetwo">
-  <div data-role="header" data-position="fixed" >
-    <h1>Principal</h1>
-      <a href="#pagetwo">Ruta</a>
-      <a href="#pagethree">Favoritos</a>
-      <a href="#pagefour">Opciones</a>
-      <a href="#pagefive">Buscar</a>
-      <a href="#pageone">Back</a>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-    
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-</div>
       
-<div data-role="page" id="pagethree">
-  <div data-role="header" data-position="fixed" >
-    <h1>Principal</h1>
-      <a href="#pagetwo">Ruta</a>
-      <a href="#pagethree">Favoritos</a>
-      <a href="#pagefour">Opciones</a>
-      <a href="#pagefive">Buscar</a>
-      <a href="#pageone">Back</a>
-  </div>
+      <div class="ui-grid-d" align="center">
 
-  <div data-role="main" class="ui-content">
-    <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-    <a href="#pageone">Go to Page One</a>
-  </div>
+        <div class="ui-block-a"><a href ="#ruta" data-role="button" data-icon="location" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-b"><a href ="#buscar" data-role="button" data-icon="search" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-c"><a href ="#favoritos" data-role="button" data-icon="star" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-d"><a href ="#opciones" data-role="button" data-icon="gear" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-e"><a href ="#principal" data-role="button" data-icon="back" data-iconpos="notext">Ruta</a></div>
+ 
+      </div>
 
-  <div data-role="footer">
-    <h1>Footer Text</h1>
   </div>
-</div>
-      
-      
-      <div data-role="page" id="pagefour">
-  <div data-role="header" data-position="fixed" >
-    <h1>Principal</h1>
-      <a href="#pagetwo">Ruta</a>
-      <a href="#pagethree">Favoritos</a>
-      <a href="#pagefour">Opciones</a>
-      <a href="#pagefive">Buscar</a>
-      <a href="#pageone">Back</a>
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-    <a href="#pageone">Go to Page One</a>
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-</div>
-      
-      
-      
-      
-      <div data-role="page" id="pagefive">
-  <div data-role="header" data-position="fixed" >
-    <h1>Principal</h1>
-      <a href="#pagetwo">Ruta</a>
-      <a href="#pagethree">Favoritos</a>
-      <a href="#pagefour">Opciones</a>
-      <a href="#pagefive">Buscar</a>
-      <a href="#pageone">Back</a>
-  </div>
-  <div data-role="main" class="ui-content">
-    <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-    <a href="#pageone">Go to Page One</a>
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer Text</h1>
-  </div>
-</div>
     
 
-    <script src="js/jquery-1.11.0.js"></script><!--jquery.mobile-1.4.0.min.js
+  <div data-role="main" class="ui-content">
+    <p>PAGINA PRINCIPAL.</p>
+    <form>
+        <div class="ui-field-contain">
+        <label for="Latitud">Latitud:</label>
+        <input type="text" name="CoordX" id="CoordX" placeholder="Latitud">
+        <label for="Longitud">Longitud:</label>
+        <input type="text" name="CoordY" id="CoordY" placeholder="Longitud">
+      </div>
+    </form>
+
+    <div>
+        <button type="button" id="b5">Get position!</button>
+        <button type="button" id="b1">Muestra Parada + Prox!</button>
+    </div> 
+      
+    <div>
+        <p>Aqui se muestran los datos: </p>
+        <div id="demo"></div>
+        <div id="id01"></div>
+    </div>
+      
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+
+<div data-role="page" id="ruta">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div class="ui-grid-d" align="center">
+
+        <div class="ui-block-a"><a href ="#ruta" data-role="button" data-icon="location" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-b"><a href ="#buscar" data-role="button" data-icon="search" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-c"><a href ="#favoritos" data-role="button" data-icon="star" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-d"><a href ="#opciones" data-role="button" data-icon="gear" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-e"><a href ="#principal" data-role="button" data-icon="back" data-iconpos="notext">Ruta</a></div>
+ 
+      </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>RUTA.</p>
+    <div>
+    
+    
+    
+    <button type="button" id="b3">Muestra Mapa!</button>
+    <button type="button" id="b33">Ves a la poliline!</button>
+
+    
+    <div>
+    <div id="mapcanvas">
+          <!-- map loads here... -->
+    </div>  
+    </div> 
+</div>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+      
+<div data-role="page" id="favoritos">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div class="ui-grid-d" align="center">
+
+        <div class="ui-block-a"><a href ="#ruta" data-role="button" data-icon="location" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-b"><a href ="#buscar" data-role="button" data-icon="search" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-c"><a href ="#favoritos" data-role="button" data-icon="star" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-d"><a href ="#opciones" data-role="button" data-icon="gear" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-e"><a href ="#principal" data-role="button" data-icon="back" data-iconpos="notext">Ruta</a></div>
+ 
+      </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>FAVORITOS.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+      
+      
+      <div data-role="page" id="opciones">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div class="ui-grid-d" align="center">
+
+        <div class="ui-block-a"><a href ="#ruta" data-role="button" data-icon="location" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-b"><a href ="#buscar" data-role="button" data-icon="search" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-c"><a href ="#favoritos" data-role="button" data-icon="star" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-d"><a href ="#opciones" data-role="button" data-icon="gear" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-e"><a href ="#principal" data-role="button" data-icon="back" data-iconpos="notext">Ruta</a></div>
+ 
+      </div>
+</div>
+  <div data-role="main" class="ui-content">
+    <p>OPCIONES.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+      
+      
+      
+      
+      <div data-role="page" id="buscar">
+  <div data-role="header" data-position="fixed" class="headers">
+    <div class="ui-grid-d" align="center">
+
+        <div class="ui-block-a"><a href ="#ruta" data-role="button" data-icon="location" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-b"><a href ="#buscar" data-role="button" data-icon="search" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-c"><a href ="#favoritos" data-role="button" data-icon="star" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-d"><a href ="#opciones" data-role="button" data-icon="gear" data-iconpos="notext">Ruta</a></div>
+        <div class="ui-block-e"><a href ="#principal" data-role="button" data-icon="back" data-iconpos="notext">Ruta</a></div>
+ 
+      </div>
+       </div>
+  <div data-role="main" class="ui-content">
+    <p>BUSCAR.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Incidencias</h1>
+  </div>
+</div>
+    
+
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script><!--jquery.mobile-1.4.0.min.js
     <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    
+      
+      
+         <script src="js/paradas.js"></script>
+          <script src="js/geo.js"></script>
+    <script src="js/buscaparadas.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
-      <script src="js/buscaparadas.js"></script>
+
   </body>
 </html>
