@@ -1,169 +1,199 @@
 <!DOCTYPE html>
 <html>
+    
   <head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
     <title>Showing pixel and tile coordinates</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
-      <link rel="stylesheet" href="css/index.css">
-      <link rel="stylesheet" href="css/index2.css">
-
-
+    
   </head>
+    
   <body>
-      
-<div data-role="page" id="principal">
-  <div data-role="header" data-position="fixed" class="headers">
+      <!-- Start of MAIN page -->
     
-      <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-      
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>PAGINA PRINCIPAL.</p>
-    <form>
-      <div class="ui-field-contain">
-        <label for="Latitud">Latitud:</label>
-        <input type="text" name="CoordX" id="CoordX" placeholder="Latitud">
-        <label for="Longitud">Longitud:</label>
-        <input type="text" name="CoordY" id="CoordY" placeholder="Longitud">
-      </div>
-    </form>
+<div data-role="page" data-title="Página Principal" id="map-page" data-url="map-page">
+	<div data-role="header" data-position="fixed" style="background: #D68500">
+		<h1>LOGO FGC</h1>  
+		
+		<a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+        <a href="#nav-panel" data-icon="star" data-iconpos="notext">Menu</a>
         
-        
-        
-  
-    <div>
-	<button type="button" id="b5">Get position!</button>
-
-    <button type="button" id="b1">Muestra Parada +Prox!</button>
-    </div> 
-    <div>
-    <p>Aqui se muestran los datos: </p>
-    <div id="demo"></div>
-    <div id="id01"></div>
-    </div>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-
-<div data-role="page" id="ruta">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>RUTA.</p>
-    <div>
+        <div>
+            <label for="search-basic"></label>
+            <input type="search" name="search" id="searc-basic" value="Buscar..." data-mini="true" />
+        </div>
+	</div><!-- /header -->
     
-    
-    
-    <button type="button" id="b3">Muestra Mapa!</button>
-    <button type="button" id="b33">Ves a la poliline!</button>
-
-    
-    <div>
-    <div id="mapcanvas">
           <!-- map loads here... -->
-    </div>  
-    </div> 
-</div>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-      
-<div data-role="page" id="favoritos">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
+    
+    
+    <div align="center">
+        <a href="#two" class= "ui-corner-all " data-role = button data-inline="true" style="border-radius:32px; border:2px solid #D68500; font-size: 25px">Barcelona - Vallès</a>
     </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>FAVORITOS.</p>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-      
-      
-      <div data-role="page" id="opciones">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
+    <p><p></p>
+    <div align="center">
+        <button type="button" id="b2" data-inline="true" style="border-radius:32px;border:2px solid #D68500; font-size: 25px">Llobregat - Anoia</button>
     </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>OPCIONES.</p>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-      
-      
-      
-      
-      <div data-role="page" id="buscar">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
+    <p><p></p>
+    <div align="center">
+        <button type="button" id="b3" data-inline="true" style="border-radius:32px; border:2px solid #D68500; font-size: 25px">Lleida - La Pobla</button>
     </div>
-       </div>
-  <div data-role="main" class="ui-content">
-    <p>BUSCAR.</p>
-  </div>
+    
+ 
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed" style="background: #D68500">
+        
+		<div align = "center">
+            <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext" style="border-radius:32px">Alert</a>
+            
+        </div>
+        
+	</div><!-- /footer -->
+    
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#map-page">Mapa</a></li>
+			<li><a href="#one">ListaParadas</a></li>
+			<li><a href="#two">Onroute</a></li>
+		</ul>
+	</div><!-- /panel -->
+    
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
+			  
+	</div><!-- /panel lateral derecho-->
+</div>
+                    <!-- End of MAIN page -->
+                    <!-- Start of 2nd page -->
+    
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="one" data-url="one">
+	<div data-role="header" data-position="fixed" style="background: #D68500">
+		<h1>Menú superior P0</h1>  
+		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#add-form1" data-icon="gear" data-iconpos="notext">Add</a>
+	</div><!-- /header -->
 
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
+    
+    <button type="button" id="b2">importJson!</button>
+
+    <ul id="ul1">
+    
+    </ul>
+    <div data-role="controlgroup" align="right">
+        <a href="" data-role="button" >Pl.Catalunya</a>
+        <a href="" data-role="button">Provença</a>
+        <a href="" data-role="button">Gràcia</a>
+        <a href="" data-role="button">Sant Gervasi</a>
+        <a href="" data-role="button">Muntaner</a>
+        <a href="" data-role="button">La Bonanova</a>
+        <a href="" data-role="button">Les Tres Torres</a>
+        <a href="" data-role="button">Sarrià</a>
+        <a href="" data-role="button">La Floresta</a>
+        <a href="" data-role="button">Valldoreix</a>
+        <a href="" data-role="button">Sant Cugat</a>
+        <a href="" data-role="button">Volpelleres</a>
+        <a href="" data-role="button">Sant Joan</a>
+        <a href="" data-role="button">Bellaterra</a>
+        <a href="" data-role="button">Universitat Autònoma</a>
+        <a href="" data-role="button">Sant Quirze</a>
+        <a href="" data-role="button">Can Feu | Gràcia</a>
+        <a href="" data-role="button">Sabadell Plaça Major</a>
+    </div>    
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed" style="background: #D68500">
+		<h4>Menú inferior P0</h4>    
+	</div><!-- /footer -->
+    
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#map-page">Mapa</a></li>
+			<li><a href="#one">ListaParadas</a></li>
+			<li><a href="#two">Onroute</a></li>
+		</ul>
+	</div><!-- /panel -->
+    
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form1">
+			  
+	</div><!-- /panel lateral derecho-->
+</div>
+<!-- End of MAIN page -->
+      
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="two" data-url="two">
+	<div data-role="header" data-position="fixed" style="background: #D68500">
+		<h1>Pl. Catalunya - Sabadell</h1>  
+		<a href="#add-form1" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#nav-panel1" data-icon="gear" data-iconpos="notext">Add</a>
+	</div><!-- /header -->
+    "#add-form1"
+    
+    
+    <button type="button" id="b2">importJson!</button>
+    <p></p>
+    <p></p><p></p><p></p>
+    <div data-role="controlgroup">
+        <a href="" data-role="button">Pl.Catalunya</a>
+        <a href="" data-role="button">Provença</a>
+        <a href="" data-role="button">Gràcia</a>
+        <a href="" data-role="button">Sant Gervasi</a>
+        <a href="" data-role="button">Muntaner</a>
+        <a href="" data-role="button">La Bonanova</a>
+        <a href="" data-role="button">Les Tres Torres</a>
+        <a href="" data-role="button">Sarrià</a>
+        <a href="" data-role="button">La Floresta</a>
+        <a href="" data-role="button">Valldoreix</a>
+        <a href="" data-role="button">Sant Cugat</a>
+        <a href="" data-role="button">Volpelleres</a>
+        <a href="" data-role="button">Sant Joan</a>
+        <a href="" data-role="button">Bellaterra</a>
+        <a href="" data-role="button">Universitat Autònoma</a>
+        <a href="" data-role="button">Sant Quirze</a>
+        <a href="" data-role="button">Can Feu | Gràcia</a>
+        <a href="" data-role="button">Sabadell Plaça Major</a>
+    </div>
+    
+    
+        
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed" style="background: #D68500">
+		<h4>Menú inferior P0</h4>    
+	</div><!-- /footer -->
+    
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#map-page">Mapa</a></li>
+			<li><a href="#one">ListaParadas</a></li>
+			<li><a href="#two">Onroute</a></li>
+		</ul>
+	</div><!-- /panel -->
+    
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form1">
+			  
+	</div><!-- /panel lateral derecho-->
 </div>
     
 
-
-    <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/jquery.mobile-1.4.0.min.js"></script><!--jquery.mobile-1.4.0.min.js
+         <!-- //API KEY ANDROID AIzaSyCJGnqOlGPCI9Eudvn-G3xmOBBxijRFgLE-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5s74_AK1O9FSErM4hmZgMLaXEEeWJTzI&language=ja"
+type="text/javascript"></script>-->
+    <!--
+    <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5s74_AK1O9FSErM4hmZgMLaXEEeWJTzI&signed_in=true&callback=initMap">
+    </script>-->
+    <script src="js/jquery-1.11.0.js"></script><!--jquery.mobile-1.4.0.min.js
     <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
-    
-      
-      
-         <script src="js/paradas.js"></script>
-          <script src="js/geo.js"></script>
-    <script src="js/buscaparadas.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
-
+    
+      <script src="js/jquery.mobile-1.4.5.min.js"></script>
   </body>
 </html>
