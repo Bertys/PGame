@@ -12,13 +12,22 @@
     
   <body>
       <!-- Start of MAIN page -->
-    
 <div data-role="page" data-title="Página Principal" id="principal" data-url="principal">
-	<div data-role="header" data-position="fixed">
+	<!--<div data-role="header" data-position="fixed">
 		<h1>FGC</h1>  
 		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <p>Icidencias JS</p>
         <div id="data"></div>
+	</div> /header -->
+    <div data-role="header" data-position="fixed" style="background: #042840">
+    <div class="ui-grid-b" align="center">
+        <div class="ui-block-a">
+        <a data-role="button" href="#nav-panel" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+        <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b" id="data"></div>
+     </div>
 	</div><!-- /header -->
     
 <div data-role="main" class="ui-content">
@@ -95,18 +104,30 @@
         <button class="btn2" type="button" id="b2" data-inline="true">Mapa</button>
     </div>
     </div><!-- /content -->
+
     
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840">
         
-        <div>
-        <a href="#favoritos">Favoritos</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#ruta">Ruta</a>
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/></a>
         </div>
-<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+        <div class="ui-block-b">
+            <a data-role="button" href="#mapa" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/></a>
+        </div>
+     </div>
+
+        
 	</div><!-- /footer -->
     
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
 			<li><a href="#principal">Principal</a></li>
@@ -122,11 +143,21 @@
                     <!-- Start of 2nd page "Pagina de Ruta"-->
     
 <div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="ruta" data-url="ruta">
-	<div data-role="header" data-position="fixed">
+	<!--<div data-role="header" data-position="fixed">
 		<h1>FGC</h1>  
-		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <p>Icidencias JS</p>
-        <div id="data1"></div>
+        <div id="data"></div>
+	</div> /header -->
+    <div data-role="header" data-position="fixed" style="background: #042840">
+    <div class="ui-grid-b" align="center">
+        <div class="ui-block-a">
+        <a data-role="button" href="#nav-panel1" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+        <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b" id="data1"></div>
+    </div>
 	</div><!-- /header -->
     
 <div data-role="main" class="ui-content">
@@ -140,14 +171,25 @@
     <div>Horarios</div>
 </div><!-- /content -->
     
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840">
         
-        <div>
-        <a href="#favoritos">Favoritos</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#ruta">Ruta</a>
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/></a>
         </div>
-<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+        <div class="ui-block-b">
+            <a data-role="button" href="#mapa" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/></a>
+        </div>
+     </div>
+
+        
 	</div><!-- /footer -->
  
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
@@ -166,11 +208,21 @@
                     <!-- Start of 3nd page "Pagina de Mapa"-->
       
 <div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="mapa" data-url="mapa">
-	<div data-role="header" data-position="fixed">
+	<!--<div data-role="header" data-position="fixed">
 		<h1>FGC</h1>  
-		<a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <p>Icidencias JS</p>
-        <div id="data2"></div>
+        <div id="data"></div>
+	</div> /header -->
+    <div data-role="header" data-position="fixed" style="background: #042840">
+    <div class="ui-grid-b" align="center">
+        <div class="ui-block-a">
+        <a data-role="button" href="#nav-panel2" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+        <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b" id="data2"></div>
+        </div>
 	</div><!-- /header -->
    <div data-role="main" class="ui-content" > 
        
@@ -182,14 +234,25 @@
         </div>
 	<!-- /content -->
     
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840">
         
-        <div>
-        <a href="#favoritos">Favoritos</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#ruta">Ruta</a>
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/></a>
         </div>
-<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+        <div class="ui-block-b">
+            <a data-role="button" href="#mapa" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/></a>
+        </div>
+     </div>
+
+        
 	</div><!-- /footer -->
     
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
@@ -207,11 +270,21 @@
                     <!-- Start of 4th page "Pagina de Favoritos"-->
     
 <div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="favoritos" data-url="favoritos">
-	<div data-role="header" data-position="fixed">
+	<!--<div data-role="header" data-position="fixed">
 		<h1>FGC</h1>  
-		<a href="#nav-panel3" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <p>Icidencias JS</p>
-        <div id="data3"></div>
+        <div id="data"></div>
+	</div> /header -->
+    <div data-role="header" data-position="fixed" style="background: #042840">
+    <div class="ui-grid-b" align="center">
+        <div class="ui-block-a">
+        <a data-role="button" href="#nav-panel3" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+        <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b" id="data3"></div>
+     </div>
 	</div><!-- /header -->
 <div data-role="main" class="ui-content">
 
@@ -219,14 +292,25 @@
     
     
 </div><!-- /content -->
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840">
         
-        <div>
-        <a href="#favoritos">Favoritos</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#ruta">Ruta</a>
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/></a>
         </div>
-<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+        <div class="ui-block-b">
+            <a data-role="button" href="#mapa" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/></a>
+        </div>
+     </div>
+
+        
 	</div><!-- /footer -->
  
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel3">
@@ -245,25 +329,46 @@
                     <!-- Start of 5th page "Pagina de Opciones"-->
     
 <div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="opciones" data-url="opciones">
-	<div data-role="header" data-position="fixed">
+	<!--<div data-role="header" data-position="fixed">
 		<h1>FGC</h1>  
-		<a href="#nav-panel4" data-icon="bars" data-iconpos="notext">Menu</a>
+		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <p>Icidencias JS</p>
-        <div id="data4"></div>
+        <div id="data"></div>
+	</div> /header -->
+    <div data-role="header" data-position="fixed" style="background: #042840">
+    <div class="ui-grid-b" align="center">
+        <div class="ui-block-a">
+        <a data-role="button" href="#nav-panel4" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+        <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b" id="data4"></div>
+     </div>
 	</div><!-- /header -->
 <div data-role="main" class="ui-content">
   
     OPCIONES
 
 </div><!-- /content -->
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840">
         
-        <div>
-        <a href="#favoritos">Favoritos</a>
-        <a href="#mapa">Mapa</a>
-        <a href="#ruta">Ruta</a>
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/></a>
         </div>
-<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+        <div class="ui-block-b">
+            <a data-role="button" href="#mapa" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+            <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/></a>
+        </div>
+     </div>
+
+        
 	</div><!-- /footer -->
  
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
