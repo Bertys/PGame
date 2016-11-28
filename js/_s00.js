@@ -121,4 +121,4 @@ var myArrayParadass00 = [
         "enllacos":"view_johor" ,
         "icon":"1" ,
         "serveis":"42.239801,0.9670300000000001"}
-    ]
+    ];

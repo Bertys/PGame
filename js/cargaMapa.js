@@ -17,8 +17,12 @@ var icon ='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAA
 
 
 var myMap;
-
-function initMap() {
+var latPropia; 
+var longPropia;
+function initMap(latitud,longitud) {
+    
+    latPropia=latitud; 
+    longPropia=longitud;
     $('#mapcanvas').css('height', $('.ons-page-inner:last').height() + 250);
   // Define a div tag with id="map_canvas"
 var mapDiv = document.getElementById("mapcanvas");
@@ -76,8 +80,8 @@ function onMapInit(map) {
 // Move to the position with animation
   map.animateCamera({
   target: {
-    lat: 41.385712,
-    lng: 2.169515
+    lat: latPropia,
+    lng: longPropia
   },
   zoom: 15
 }, function() {

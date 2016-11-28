@@ -13,159 +13,296 @@
   <body>
       <!-- Start of MAIN page -->
     
-<div data-role="page" data-title="Página Principal" id="principa" data-url="principal">
+<div data-role="page" data-title="Página Principal" id="principal" data-url="principal">
 	<div data-role="header" data-position="fixed">
-		<h1>LOGO FGC</h1>  
+		<h1>FGC</h1>  
 		<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <p>Icidencias JS</p>
+        <div id="data"></div>
 	</div><!-- /header -->
+    
 <div data-role="main" class="ui-content">
-    <div>
-        <button class="btn1" type="button" id="b1" data-inline="true">Barcelona - Vallès</button>
+    
+    <form>
+    <div class="ui-field-contain">
+        <label for="selectlinia">Seleccioa la Linia:</label>
+        <select name="selectlinia" id="selectlinia">
+            <option>Selecciona...</option>
+            <option value="BCNVALL">Barcelona - Vallès</option>
+            <option value="LLOBANO">Llobregat - Anoia</option>
+            <option value="LLEPOB">Lleida - La Pobla</option>
+        </select>
     </div>
-    <p><p></p>
+    </form>
+    
+    <form id="formselectsublinia1">
+    <div class="ui-field-contain">
+        <label for="selectsublinia1">Seleccioa la SubLinia:</label>
+        <select name="selectsublinia1" id="selectsublinia1">
+                <option>Selecciona...</option>
+                <option value="L6">L6</option>
+                <option value="L7">L7</option>
+                <option value="L12">L12</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S5">S5</option>
+                <option value="S55">S55</option>
+        </select>
+    </div>
+    </form>
+    
+    <form id="formselectsublinia2">
+    <div class="ui-field-contain">
+        <label for="selectsublinia2">Seleccioa la SubLinia:</label>
+        <select name="selectsublinia2" id="selectsublinia2">
+                <option>Selecciona...</option>
+                <option value="L8">L8</option>
+                <option value="S33">S33</option>
+                <option value="S4">S4</option>
+                <option value="S8">S8</option>
+                <option value="R5">R5</option>
+                <option value="R50">R50</option>
+                <option value="R6">R6</option>
+                <option value="R60">R60</option>
+        </select>
+    </div>
+    </form>
+    
+    
+    <form id="formparadaOrigen">
+    <div class="ui-field-contain">
+        <label for="paradaOrigen">Parada Origen:</label>
+        <select name="paradaOrigen" id="paradaOrigen">
+    
+        </select>
+    </div>
+    </form>
+    
+    <form id="formparadaFinal">
+    <div class="ui-field-contain">
+        <label for="paradaFinal">Parada Final:</label>
+        <select name="paradaFinal" id="paradaFinal">
+
+        </select>
+    </div>
+    </form>
+    
     <div>
-        <button class="btn1" type="button" id="b2" data-inline="true">Llobregat - Anoia</button>
+        <button class="btn1" type="button" id="b1" data-inline="true">Ruta</button>
     </div>
-    <p><p></p>
+    
     <div>
-        <button class="btn1" type="button" id="b3" data-inline="true">Lleida - La Pobla</button>
+        <button class="btn2" type="button" id="b2" data-inline="true">Mapa</button>
     </div>
-    </div>
- 
-	<!-- /content -->
+    </div><!-- /content -->
     
 	<div data-role="footer" data-position="fixed" style="background: #D68500">
         
-		<div>
-            <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>
+        <div>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#ruta">Ruta</a>
         </div>
-        
+<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
 	</div><!-- /footer -->
     
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
-            <li><a href="#three">Onroute</a></li>
-            <li><a href="#mapa">Onroute</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a href="#ruta">Ruta</a></li>
+			<li><a href="#mapa">Mapa</a></li>
+            <li><a href="#favoritos">Favoritos</a></li>
+            <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
     
 </div>
-                    <!-- End of 1st page -->
-                    <!-- Start of 2nd page -->
+                    <!-- End of 1st page "Pagina Principal"-->
+                    <!-- Start of 2nd page "Pagina de Ruta"-->
     
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="one" data-url="one">
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="ruta" data-url="ruta">
 	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P0</h1>  
+		<h1>FGC</h1>  
 		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
+        <p>Icidencias JS</p>
+        <div id="data1"></div>
 	</div><!-- /header -->
+    
 <div data-role="main" class="ui-content">
-    <div id="id01"></div>
 
+    <h1>RUTA COMPLETA</h1>
+    <div id="rutaParadas">Se inserta aqui</div>
+    <p>-------------------------------</p>
+    <div>Menu 3 paradas</div>
+    <div>Foto Parada</div>
+    <div>Foto Parada</div>
+    <div>Horarios</div>
 </div><!-- /content -->
+    
 	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
+        
+        <div>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#ruta">Ruta</a>
+        </div>
+<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
 	</div><!-- /footer -->
  
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#map-page">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a href="#ruta">Ruta</a></li>
+			<li><a href="#mapa">Mapa</a></li>
+            <li><a href="#favoritos">Favoritos</a></li>
+            <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
 </div>
-<!-- End of 2nd page -->
+                    <!-- End of 2nd page "Pagina de Ruta"-->
+                    <!-- Start of 3nd page "Pagina de Mapa"-->
       
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="two" data-url="two">
-	<div data-role="header" data-position="fixed" style="background: #D68500">
-		<h1>Pl. Catalunya - Sabadell</h1>  
-		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="mapa" data-url="mapa">
+	<div data-role="header" data-position="fixed">
+		<h1>FGC</h1>  
+		<a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
+        <p>Icidencias JS</p>
+        <div id="data2"></div>
 	</div><!-- /header -->
    <div data-role="main" class="ui-content" > 
+       
+       MAPA
+       <div id="demo"></div>
+       <div id="id01"></div>
+       <div id="mapcanvas"></div>
        
         </div>
 	<!-- /content -->
     
 	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
+        
+        <div>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#ruta">Ruta</a>
+        </div>
+<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
 	</div><!-- /footer -->
     
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#map-page">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
-		</ul>
-</div>
-  </div>  
-      <!-- End of 2nd page -->
-     <!-- Start of 3rd page -->
-    
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="three" data-url="three">
-	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P0</h1>  
-		<a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
-	</div><!-- /header -->
-<div data-role="main" class="ui-content">
-    <div id="id01"></div>
-
-</div><!-- /content -->
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
-	</div><!-- /footer -->
- 
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#map-page">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a href="#ruta">Ruta</a></li>
+			<li><a href="#mapa">Mapa</a></li>
+            <li><a href="#favoritos">Favoritos</a></li>
+            <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
-			  
-</div>
-<!-- End of 3rd page -->
-           <!-- Start of 4th page -->
+  </div>  
+                    <!-- End of 3nd page "Pagina de Mapa"-->
+                    <!-- Start of 4th page "Pagina de Favoritos"-->
     
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="mapa" data-url="mapa">
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="favoritos" data-url="favoritos">
 	<div data-role="header" data-position="fixed">
-		<h1>Menú superior P0</h1>  
+		<h1>FGC</h1>  
 		<a href="#nav-panel3" data-icon="bars" data-iconpos="notext">Menu</a>
+        <p>Icidencias JS</p>
+        <div id="data3"></div>
 	</div><!-- /header -->
 <div data-role="main" class="ui-content">
-    <div id="id01"></div>
 
+    FAVORITOS
+    
+    
 </div><!-- /content -->
 	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
+        
+        <div>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#ruta">Ruta</a>
+        </div>
+<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
 	</div><!-- /footer -->
  
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel3">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#map-page">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a href="#ruta">Ruta</a></li>
+			<li><a href="#mapa">Mapa</a></li>
+            <li><a href="#favoritos">Favoritos</a></li>
+            <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
 </div>
-<!-- End of 4th page -->
+                    <!-- End of 4th page "Pagina de Favoritos"-->
+                    <!-- Start of 5th page "Pagina de Opciones"-->
+    
+<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="opciones" data-url="opciones">
+	<div data-role="header" data-position="fixed">
+		<h1>FGC</h1>  
+		<a href="#nav-panel4" data-icon="bars" data-iconpos="notext">Menu</a>
+        <p>Icidencias JS</p>
+        <div id="data4"></div>
+	</div><!-- /header -->
+<div data-role="main" class="ui-content">
+  
+    OPCIONES
+
+</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" style="background: #D68500">
+        
+        <div>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#ruta">Ruta</a>
+        </div>
+<!--        <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext">Alert</a>-->
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a href="#ruta">Ruta</a></li>
+			<li><a href="#mapa" id="asas">Mapa</a></li>
+            <li><a href="#favoritos">Favoritos</a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
+</div>
+                    <!-- End of 5th page "Pagina de Opciones"-->
+      
     <script type="text/javascript" src="cordova.js"></script>
     
       <script type="text/javascript" src="js/geo.js"></script>
       <script type="text/javascript" src="js/cargaMapa.js"></script>
       <script type="text/javascript" src="js/buscaparadas.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/_s55.js"></script>
       <script type="text/javascript" src="js/_s00.js"></script>
+      <script type="text/javascript" src="js/_l6.js"></script>
+      <script type="text/javascript" src="js/_l7.js"></script>
+      <script type="text/javascript" src="js/_l8.js"></script>
+      <script type="text/javascript" src="js/_l12.js"></script>
+      <script type="text/javascript" src="js/_r5.js"></script>
+      <script type="text/javascript" src="js/_r6.js"></script>
+      <script type="text/javascript" src="js/_r50.js"></script>
+      <script type="text/javascript" src="js/_r60.js"></script>
+      <script type="text/javascript" src="js/_s1.js"></script>
+      <script type="text/javascript" src="js/_s2.js"></script>
+      <script type="text/javascript" src="js/_s4.js"></script>
+      <script type="text/javascript" src="js/_s5.js"></script>
+      <script type="text/javascript" src="js/_s8.js"></script>
+      <script type="text/javascript" src="js/_s33.js"></script>
+      
 
   </body>
 </html>

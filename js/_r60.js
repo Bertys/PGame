@@ -1,7 +1,7 @@
 //LINIA BARCELONA - VALLES
 //S55 Barcelona-Pl. Catalunya - U. Autónoma
 
-var myArrayParadas = [
+var myArrayParadasr60 = [
 { 
         "name":"Pl. Catalunya" , 
         "enllacos":"L6,L7,S5,S55,S1,S2,L1,L3,R1,R3,R4" ,
@@ -128,4 +128,4 @@ var myArrayParadas = [
         "enllacos":"view_johor" ,
         "icon":"1" ,
         "serveis":"41.545389,2.109767"}
-    ]
+    ];
