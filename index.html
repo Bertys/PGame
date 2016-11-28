@@ -14,43 +14,109 @@
   <body>
       <!-- Start of MAIN page -->
     
-<div data-role="page" data-title="Página Principal" id="map-page" data-url="map-page">
-	<div data-role="header" data-position="fixed" style="background: #D68500">
-		<h1>LOGO FGC</h1>  
-		
-		<a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
-        <a href="#nav-panel" data-icon="star" data-iconpos="notext">Menu</a>
+<div data-role="page" data-title="Página Principal - Mapa" id="map-page" data-url="map-page" style="background: #042840">
+	<div data-role="header" data-position="fixed" style="background: #042840; border:0px">
+      
+
+
+    
+    <div class="ui-grid-b" align="center">
         
-        <div>
-            <label for="search-basic"></label>
-            <input type="search" name="search" id="searc-basic" value="Buscar..." data-mini="true" />
+        
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#nav-panel" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/>
+            </a>
+        
         </div>
+        
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        
+
+     </div>
+ 
+        
 	</div><!-- /header -->
     
           <!-- map loads here... -->
     
     
     <div align="center">
-        <a href="#two" class= "ui-corner-all " data-role = button data-inline="true" style="border-radius:32px; border:2px solid #D68500; font-size: 25px">Barcelona - Vallès</a>
+        <a href="#two" class= "ui-corner-all " data-role = button data-inline="true" style="border-radius:32px; border:24px color:white; font-size: 20px; color:white; background:#042840; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Barcelona - Vallès</a>
     </div>
     <p><p></p>
     <div align="center">
-        <button type="button" id="b2" data-inline="true" style="border-radius:32px;border:2px solid #D68500; font-size: 25px">Llobregat - Anoia</button>
+        <button type="button" id="b2" data-inline="true" style="border-radius:32px;border:2px color:white; font-size: 20px; background:#042840; color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Llobregat - Anoia</button>
     </div>
     <p><p></p>
     <div align="center">
-        <button type="button" id="b3" data-inline="true" style="border-radius:32px; border:2px solid #D68500; font-size: 25px">Lleida - La Pobla</button>
+        <button type="button" id="b3" data-inline="true" style="border-radius:32px; border:2px color:white; font-size: 20px; background:#042840; color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Lleida - La Pobla</button>
     </div>
     
  
 	<!-- /content -->
     
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
+	<div data-role="footer" data-position="fixed" style="background: #042840; border:0px;">
         
-		<div align = "center">
-            <a href="" class= "ui-btn ui-corner-all" data-icon="alert" data-iconpos="notext" style="border-radius:32px">Alert</a>
-            
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#two" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconFav.png" border="0" width=66% height="66%" style="float:right;"/>
+            </a>
+        
         </div>
+        
+        <div class="ui-block-b">
+        
+            <a data-role="button" href="" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPMap.png" border="0" width=90% height="90%" style="float:center;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-c">
+        
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/>
+            </a>
+        
+        </div>
+        
+        
+        
+        
+     </div>
+        
+        
+        <!--    funciona!!!
+            <div class="ui-grid-b" align="center">
+
+            <div class="ui-block-a"><img border="0" src="./img/iconFav.png" href="#nav-panel" data-role="button"  width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b"><img border="0" src="./img/iconMap.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-c"><img border="0" src="./img/iconRuta.png" width="66%" height="66%"  style="float:center;"/></div>
+        
+        
+     </div>
+
+
+        -->        
+        
+        <!--    funciona!!!
+            <div class="ui-grid-b" align="center">
+
+            <div class="ui-block-a"><img border="0" src="./img/iconFav.png" href="#nav-panel" data-role="button"  width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b"><img border="0" src="./img/iconMap.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-c"><img border="0" src="./img/iconRuta.png" width="66%" height="66%"  style="float:center;"/></div>
+        
+        
+     </div>
+
+
+        -->
+		
         
 	</div><!-- /footer -->
     
@@ -70,99 +136,172 @@
                     <!-- End of MAIN page -->
                     <!-- Start of 2nd page -->
     
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="one" data-url="one">
-	<div data-role="header" data-position="fixed" style="background: #D68500">
-		<h1>Menú superior P0</h1>  
-		<a href="#nav-panel1" data-icon="bars" data-iconpos="notext">Menu</a>
-		<a href="#add-form1" data-icon="gear" data-iconpos="notext">Add</a>
-	</div><!-- /header -->
 
-    
-    <button type="button" id="b2">importJson!</button>
-
-    <ul id="ul1">
-    
-    </ul>
-    <div data-role="controlgroup" align="right">
-        <a href="" data-role="button" >Pl.Catalunya</a>
-        <a href="" data-role="button">Provença</a>
-        <a href="" data-role="button">Gràcia</a>
-        <a href="" data-role="button">Sant Gervasi</a>
-        <a href="" data-role="button">Muntaner</a>
-        <a href="" data-role="button">La Bonanova</a>
-        <a href="" data-role="button">Les Tres Torres</a>
-        <a href="" data-role="button">Sarrià</a>
-        <a href="" data-role="button">La Floresta</a>
-        <a href="" data-role="button">Valldoreix</a>
-        <a href="" data-role="button">Sant Cugat</a>
-        <a href="" data-role="button">Volpelleres</a>
-        <a href="" data-role="button">Sant Joan</a>
-        <a href="" data-role="button">Bellaterra</a>
-        <a href="" data-role="button">Universitat Autònoma</a>
-        <a href="" data-role="button">Sant Quirze</a>
-        <a href="" data-role="button">Can Feu | Gràcia</a>
-        <a href="" data-role="button">Sabadell Plaça Major</a>
-    </div>    
-	<!-- /content -->
-    
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
-	</div><!-- /footer -->
-    
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#map-page">Mapa</a></li>
-			<li><a href="#one">ListaParadas</a></li>
-			<li><a href="#two">Onroute</a></li>
-		</ul>
-	</div><!-- /panel -->
-    
-	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form1">
-			  
-	</div><!-- /panel lateral derecho-->
-</div>
 <!-- End of MAIN page -->
       
-<div data-role="page" class="jqm-demos" data-title="Panel fixed positioning" id="two" data-url="two">
-	<div data-role="header" data-position="fixed" style="background: #D68500">
-		<h1>Pl. Catalunya - Sabadell</h1>  
-		<a href="#add-form1" data-icon="bars" data-iconpos="notext">Menu</a>
-		<a href="#nav-panel1" data-icon="gear" data-iconpos="notext">Add</a>
+<div data-role="page" class="jqm-demos" data-title="Ruta" id="ruta" data-url="ruta">
+    
+    <div data-role="header" data-position="fixed" style="background: #042840">
+      
+    
+    <div class="ui-grid-b" align="center">
+        
+        
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#nav-panel" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+
+        
+     </div>
+        
+
 	</div><!-- /header -->
-    "#add-form1"
+    
+          <!-- map loads here... -->
+
+    <div align="center">
+        <a href="#two" class= "ui-corner-all " data-role = button data-inline="true" style="border-radius:32px; border:2px solid #042840; font-size: 20px">Barcelona - Vallès</a>
+    </div>
+    <p><p></p>
+    <div align="center">
+        <button type="button" id="b2" data-inline="true" style="border-radius:32px;border:2px solid #042840; font-size: 20px">Llobregat - Anoia</button>
+    </div>
+    <p><p></p>
+    <div align="center">
+        <button type="button" id="b3" data-inline="true" style="border-radius:32px; border:2px solid #042840; font-size: 20px">Lleida - La Pobla</button>
+    </div>
+    
+ 
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed" style="background: #042840">
+        
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#two" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconFav.png" border="0" width=66% height="66%" style="float:right;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-b">
+        
+            <a data-role="button" href="#map-page" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-c">
+        
+            <a data-role="button" href="" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPRuta.png" border="0" width="90%" height="90%" style="float:left;"/>
+            </a>
+        
+        </div>
+
+     </div>
+        
+        
+        <!--    funciona!!!
+            <div class="ui-grid-b" align="center">
+
+            <div class="ui-block-a"><img border="0" src="./img/iconFav.png" href="#nav-panel" data-role="button"  width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-b"><img border="0" src="./img/iconMap.png" width="66%" height="66%"  style="float:center;"/></div>
+        <div class="ui-block-c"><img border="0" src="./img/iconRuta.png" width="66%" height="66%"  style="float:center;"/></div>
+        
+        
+     </div>
+
+
+        -->
+		
+        
+	</div><!-- /footer -->
+
+    
+      </div>
+
+      
+<div data-role="page" class="jqm-demos" data-title="Favoritos" id="two" data-url="two">
+	<div data-role="header" data-position="fixed" style="background: #042840">
+      
+
+
+    
+    <div class="ui-grid-b" align="center">
+        
+        
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#nav-panel" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconMenu.png" border="0" width=66% height="66%" style="float:center;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-b"><br><img border="0" src="./img/iconRenfe.png" width="66%" height="66%"  style="float:center;"/></div>
+        
+        
+        
+     </div>
+        
+
+        
+        
+	</div><!-- /header -->
+    
     
     
     <button type="button" id="b2">importJson!</button>
     <p></p>
     <p></p><p></p><p></p>
-    <div data-role="controlgroup">
-        <a href="" data-role="button">Pl.Catalunya</a>
-        <a href="" data-role="button">Provença</a>
-        <a href="" data-role="button">Gràcia</a>
-        <a href="" data-role="button">Sant Gervasi</a>
-        <a href="" data-role="button">Muntaner</a>
-        <a href="" data-role="button">La Bonanova</a>
-        <a href="" data-role="button">Les Tres Torres</a>
-        <a href="" data-role="button">Sarrià</a>
-        <a href="" data-role="button">La Floresta</a>
-        <a href="" data-role="button">Valldoreix</a>
-        <a href="" data-role="button">Sant Cugat</a>
-        <a href="" data-role="button">Volpelleres</a>
-        <a href="" data-role="button">Sant Joan</a>
-        <a href="" data-role="button">Bellaterra</a>
-        <a href="" data-role="button">Universitat Autònoma</a>
-        <a href="" data-role="button">Sant Quirze</a>
-        <a href="" data-role="button">Can Feu | Gràcia</a>
-        <a href="" data-role="button">Sabadell Plaça Major</a>
-    </div>
+    
     
     
         
 	<!-- /content -->
     
-	<div data-role="footer" data-position="fixed" style="background: #D68500">
-		<h4>Menú inferior P0</h4>    
+		<div data-role="footer" data-position="fixed" style="background: #042840">
+        
+    <div class="ui-grid-b" align="center">
+
+        <div class="ui-block-a">
+        
+            <a data-role="button" href="#two" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconPFav.png" border="0" width=90% height="90%" style="float:right;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-b">
+        
+            <a data-role="button" href="#map-page" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconMap.png" border="0" width=66% height="66%" style="float:center;"/>
+            </a>
+        
+        </div>
+        
+        <div class="ui-block-c">
+        
+            <a data-role="button" href="#ruta" data-shadow="false" data-theme="none" style="background: #042840; border:0px;" >
+                <img src="img/iconRuta.png" border="0" width="66%" height="66%" style="float:left;"/>
+            </a>
+        
+        </div>
+        
+     </div>
+
+		
+        
 	</div><!-- /footer -->
     
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
