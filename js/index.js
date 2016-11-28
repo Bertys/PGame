@@ -14,21 +14,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-        
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        //error raro, Uncaught TypeError: Cannot read property 'querySelector' of null
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    initMap();
     }
 };
 
@@ -40,17 +26,52 @@ app.initialize();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-document.getElementById("b1").addEventListener("click", function(){
-    //alert("Entrando en b2");
-    var cordx=0;
-    var cordy=0;
-    cordx=document.getElementById("CoordX").value;
-    cordy=document.getElementById("CoordY").value;
-    buscaMasProxima(myArrayParadas,cordx,cordy);
-    //NOTOCAR VA BIEN;
+//document.getElementById("selectsublinia").hide();
+$( "#formselectsublinia" ).hide();
+$( "#formparadaOrigen" ).hide();
+function myFunction() {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<p>' + arr[i].name + ' coords: ' +
+        arr[i].serveis + '</p><br>';
+    }
+    document.getElementById("id01").innerHTML = out;
+}
+/*<option>Selecciona...</option>
+        <option value="1">Barcelona - Vallès</option>
+        <option value="2">Llobregat - Anoia</option>
+        <option value="3">Lleida - La Pobla</option>*/
+
+
+document.getElementById("selectlinia").addEventListener("change", function(){
+  $( "#formselectsublinia" ).show();
+});
+document.getElementById("selectsublinia").addEventListener("change", function(){
+  $( "#formparadaOrigen" ).show();
+});
+/*document.getElementById("b1").addEventListener("click", function(){
+  window.location.href='#one';
+  jQuery( "#one" ).on( "pageload", buscaParadasbyLinia(myArrayParadass55));
 });
 
+document.getElementById("b2").addEventListener("click", function(){
+  window.location.href='#two';
+  jQuery( "#two" ).on( "pageload", buscaParadasbyLinia());
+});
 document.getElementById("b3").addEventListener("click", function(){
+  window.location.href='#three';
+  jQuery( "#three" ).on( "pageload", buscaParadasbyLinia(myArrayParadass00));
+});*/
+/*document.getElementById("bs55").addEventListener("click", function(){
+    //Uncaught ReferenceError: initMap11 is not defined //
+    onMapReadys55(myMap);
+});
+document.getElementById("bs00").addEventListener("click", function(){
+    //Uncaught ReferenceError: initMap11 is not defined //
+    onMapReadys00(myMap);
+});
+document.getElementById("b333").addEventListener("click", function(){
     //Uncaught ReferenceError: initMap11 is not defined //
     initMap();
 });
@@ -58,3 +79,11 @@ document.getElementById("b5").addEventListener("click", function(){
     //NOTOCAR VA BIEN;
     getLocation();
 });
+
+document.getElementById("mospar").addEventListener("click", function(){
+    //NOTOCAR VA BIEN;
+    cargaParadas();
+});*/
+/*$( ".target" ).change(function() {
+  alert( "Handler for .change() called." );
+});*/

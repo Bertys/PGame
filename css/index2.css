@@ -2,3 +2,17 @@
         background: #ffa500 !important;
         float: left !important;
 }
+div{
+        align-content:  "center";
+    background: #D68500;
+}
+.ui-corner-all{
+    border-radius:32px;
+    border:2px solid #D68500; 
+    font-size: 25px;
+}
+.btn1{
+    border-radius:32px;
+    border:2px solid #D68500; 
+    font-size: 25px;
+}
