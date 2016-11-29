@@ -1,169 +1,349 @@
 <!DOCTYPE html>
 <html>
+    
   <head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
     <title>Showing pixel and tile coordinates</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
       <link rel="stylesheet" href="css/index.css">
       <link rel="stylesheet" href="css/index2.css">
-
-
   </head>
+    
   <body>
-      
-<div data-role="page" id="principal">
-  <div data-role="header" data-position="fixed" class="headers">
+      <!-- Start of MAIN page -->
+<div data-role="page" data-title="Página Principal" id="principal" data-url="principal" class="pageMain">
+    <div data-role="header">
+    <div class="ui-grid-b headers">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-c datas" id="data"></div>
+     </div>
+	</div><!-- /header -->
     
-      <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
+<div data-role="main" class="ui-content">
+ 
+    <form id="formselectsublinia">
+    <div class="ui-field-contain">
+        <label for="selectsublinia">Selecciona la SubLinia:</label>
+        <select name="selectsublinia" id="selectsublinia">
+                <option>Escoge la Linia:</option>
+        <optgroup label="Barcelona - Vallès">
+            <option value="L6">L6</option>
+            <option value="L7">L7</option>
+            <option value="L12">L12</option>
+            <option value="S1">S1</option>
+            <option value="S2">S2</option>
+            <option value="S5">S5</option>
+            <option value="S55">S55</option>
+        </optgroup>
+        <optgroup label="Llobregat - Anoia">
+            <option value="L8">L8</option>
+            <option value="S33">S33</option>
+            <option value="S4">S4</option>
+            <option value="S8">S8</option>
+            <option value="R5">R5</option>
+            <option value="R50">R50</option>
+            <option value="R6">R6</option>
+            <option value="R60">R60</option>
+        </optgroup>
+            <optgroup label="Lleida - La Pobla">
+                <option value="S00">S00</option>
+            </optgroup>    
+        </select>
     </div>
-      
-  </div>
-
-  <div data-role="main" class="ui-content">
-    <p>PAGINA PRINCIPAL.</p>
-    <form>
-      <div class="ui-field-contain">
-        <label for="Latitud">Latitud:</label>
-        <input type="text" name="CoordX" id="CoordX" placeholder="Latitud">
-        <label for="Longitud">Longitud:</label>
-        <input type="text" name="CoordY" id="CoordY" placeholder="Longitud">
-      </div>
     </form>
-        
-        
-        
+    
+    
+    <form id="formparadaOrigen">
+    <div class="ui-field-contain">
+        <label for="paradaOrigen">Parada Origen:</label>
+        <select name="paradaOrigen" id="paradaOrigen">
+    
+        </select>
+    </div>
+    </form>
+    
+    <form id="formparadaFinal">
+    <div class="ui-field-contain">
+        <label for="paradaFinal">Parada Final:</label>
+        <select name="paradaFinal" id="paradaFinal">
+
+        </select>
+    </div>
+    </form>
+    
+
+    </div><!-- /content -->
+
+    
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+    
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+    
+</div>
+                    <!-- End of 1st page "Pagina Principal"-->
+                    <!-- Start of 2nd page "Pagina de Ruta"-->
+    
+<div data-role="page" data-title="Panel fixed positioning" id="ruta" data-url="ruta"  class="pageMain">
+	<div data-role="header">
+    <div class="ui-grid-b headers">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-c datas" id="data1"></div>
+     </div>
+	</div><!-- /header -->
+    
+<div data-role="main" class="ui-content">
+
+    <h1>RUTA COMPLETA</h1>
+    <div id="rutaParadas">Se inserta aqui</div>
+    <p>-------------------------------</p>
+    <div>Menu 3 paradas</div>
+    <div>Foto Parada</div>
+    <div>Foto Parada</div>
+    <div>Horarios</div>
+</div><!-- /content -->
+    
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
+</div>
+                    <!-- End of 2nd page "Pagina de Ruta"-->
+                    <!-- Start of 3nd page "Pagina de Mapa"-->
+      
+<div data-role="page" data-title="Panel fixed positioning" id="mapa" data-url="mapa"  class="pageMain">
+	<div data-role="header">
+    <div class="ui-grid-b headers">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-c datas" id="data2"></div>
+     </div>
+	</div><!-- /header -->
+   <div data-role="main" class="ui-content" > 
+       
+       MAPA
+       <div>
+        <button class="btn2" type="button" id="clearBtn" data-inline="true">Clear Map</button>
+        </div>
+       <div id="demo"></div>
+       <div id="id01"></div>
+       <div id="mapcanvas"></div>
+       
+        </div>
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+    
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+  </div>  
+                    <!-- End of 3nd page "Pagina de Mapa"-->
+                    <!-- Start of 4th page "Pagina de Favoritos"-->
+    
+<div data-role="page" data-title="Panel fixed positioning" id="favoritos" data-url="favoritos"  class="pageMain">
+	<div data-role="header">
+    <div class="ui-grid-b headers">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-c datas" id="data3"></div>
+     </div>
+	</div><!-- /header -->
+<div data-role="main" class="ui-content">
+
+    FAVORITOS
+    
+    
+</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel3">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
+</div>
+                    <!-- End of 4th page "Pagina de Favoritos"-->
+                    <!-- Start of 5th page "Pagina de Opciones"-->
+    
+<div data-role="page" data-title="Panel fixed positioning" id="opciones" data-url="opciones"  class="pageMain">
+	<div data-role="header">
+    <div class="ui-grid-b">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-c datas" id="data4"></div>
+     </div>
+	</div><!-- /header -->
+<div data-role="main" class="ui-content">
   
-    <div>
-	<button type="button" id="b5">Get position!</button>
+    OPCIONES
 
-    <button type="button" id="b1">Muestra Parada +Prox!</button>
-    </div> 
-    <div>
-    <p>Aqui se muestran los datos: </p>
-    <div id="demo"></div>
-    <div id="id01"></div>
-    </div>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
+</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#ruta" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#principal">Principal</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/iconRuta.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/iconMap.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+                <img src="img/iconFav.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
 </div>
-
-<div data-role="page" id="ruta">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>RUTA.</p>
-    <div>
-    
-    
-    
-    <button type="button" id="b3">Muestra Mapa!</button>
-    <button type="button" id="b33">Ves a la poliline!</button>
-
-    
-    <div>
-    <div id="mapcanvas">
-          <!-- map loads here... -->
-    </div>  
-    </div> 
-</div>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
+                    <!-- End of 5th page "Pagina de Opciones"-->
       
-<div data-role="page" id="favoritos">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>FAVORITOS.</p>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-      
-      
-      <div data-role="page" id="opciones">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-</div>
-  <div data-role="main" class="ui-content">
-    <p>OPCIONES.</p>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-      
-      
-      
-      
-      <div data-role="page" id="buscar">
-  <div data-role="header" data-position="fixed" class="headers">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#ruta" class="ui-btn">Ruta</a>
-        <a href="#buscar" class="ui-btn">Buscar</a>
-        <a href="#favoritos" class="ui-btn">Favoritos</a>
-      <a href="#opciones" class="ui-btn">Opciones</a>
-      <a href="#principal" class="ui-btn">Back</a>
-    </div>
-       </div>
-  <div data-role="main" class="ui-content">
-    <p>BUSCAR.</p>
-  </div>
-
-  <div data-role="footer">
-    <h1>Incidencias</h1>
-  </div>
-</div>
-    
-
-
-    <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/jquery.mobile-1.4.0.min.js"></script><!--jquery.mobile-1.4.0.min.js
-    <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
     
+      <script type="text/javascript" src="js/iniciaPaginas.js"></script>
+      <script type="text/javascript" src="js/geo.js"></script>
+      <script type="text/javascript" src="js/cargaMapa.js"></script>
+      <script type="text/javascript" src="js/buscaparadas.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/_s55.js"></script>
+      <script type="text/javascript" src="js/_s00.js"></script>
+      <script type="text/javascript" src="js/_l6.js"></script>
+      <script type="text/javascript" src="js/_l7.js"></script>
+      <script type="text/javascript" src="js/_l8.js"></script>
+      <script type="text/javascript" src="js/_l12.js"></script>
+      <script type="text/javascript" src="js/_r5.js"></script>
+      <script type="text/javascript" src="js/_r6.js"></script>
+      <script type="text/javascript" src="js/_r50.js"></script>
+      <script type="text/javascript" src="js/_r60.js"></script>
+      <script type="text/javascript" src="js/_s1.js"></script>
+      <script type="text/javascript" src="js/_s2.js"></script>
+      <script type="text/javascript" src="js/_s4.js"></script>
+      <script type="text/javascript" src="js/_s5.js"></script>
+      <script type="text/javascript" src="js/_s8.js"></script>
+      <script type="text/javascript" src="js/_s33.js"></script>
       
-      
-         <script src="js/paradas.js"></script>
-          <script src="js/geo.js"></script>
-    <script src="js/buscaparadas.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-
 
   </body>
 </html>

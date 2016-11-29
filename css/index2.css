@@ -1,4 +1,37 @@
 .headers {
-        background: #ffa500 !important;
-        float: left !important;
+        background: yellow !important;
+        float: inherit !important;
+}
+
+.pageMain {
+
+    background: linear-gradient(blue, green); /* Standard syntax */
+/*    background-color: powderblue !important;*/
+}
+/*img {
+    max-width: 500px;
+    width:25% !important;
+    height:25% !important;
+    float:center;
+
+opacity: 0.5;
+}*/
+.footers{
+    background-color: powderblue !important;
+
+    float: inherit;
+}
+.imgMenu{
+    width:50% !important;
+    height:50% !important;
+}
+a{
+    background-color: powderblue !important;
+}
+.logo{
+    width:50% !important;
+    height:50% !important;
+}
+.datas{
+    padding: 50px;
 }
