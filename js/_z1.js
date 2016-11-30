@@ -7,7 +7,7 @@ var myArrayParadasz1 = [
         "enllacos":"L6,L7,S5,S55,S1,S2,L1,L3,R1,R3,R4" ,
         "latitut":"41.385712" ,
         "longitud":"2.169515" ,
-        "icon":"1" ,
+        "icon":"1",
         "serveis":"41.385712,2.169515"}, 
     { 
         "name":"Provença" , 

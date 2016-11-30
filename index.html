@@ -13,23 +13,74 @@
   </head>
     
   <body>
-      <!-- Start of MAIN page -->
-<div data-role="page" data-title="Página Principal" id="principal" data-url="principal" class="pageMain">
+      <!-- Start of 3nd page "Pagina de Mapa"-->
+      
+<div data-role="page" data-title="Panel fixed positioning" id="mapa" data-url="mapa">
+	<div data-role="header">
+    <div class="ui-grid-b headers">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel2"><img class="imgMenu" src="./img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
+        <div class="ui-block-c datas" id="data2"></div>
+     </div>
+	</div><!-- /header -->
+   <div data-role="main" class="ui-content pageMain" > 
+       
+       <div id="mapcanvas"></div>
+        <div>
+        <button class="btn2" type="button" id="clearBtn" data-inline="true">Clear Map</button>
+        </div>
+        </div>
+	<!-- /content -->
+    
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" onclick=goToFavs()>
+            <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaSeleccionado.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+    
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#iniciaRuta">iniciaRuta</a></li>
+			<li><a data-role="button" onclick=goToRute()>
+            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
+			<li><a data-role="button" onclick=goToMap()>
+            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
+            <li><a data-role="button" onclick=goToFavs()>
+            <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
+            <li><a href="#opciones">Opciones</a></li>
+		</ul>
+	</div><!-- /panel -->
+  </div>  
+                    <!-- End of 3nd page "Pagina de Mapa"-->
+                    <!-- Start of iniciaRuta page -->
+<div data-role="page" data-title="Página Principal" id="iniciaRuta" data-url="iniciaRuta">
     <div data-role="header">
     <div class="ui-grid-b headers">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
-        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
         <div class="ui-block-c datas" id="data"></div>
      </div>
 	</div><!-- /header -->
     
-<div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content pageMain" > 
  
     <form id="formselectsublinia">
     <div class="ui-field-contain">
         <label for="selectsublinia">Selecciona la SubLinia:</label>
         <select name="selectsublinia" id="selectsublinia">
-                <option>Escoge la Linia:</option>
+        <option>Escoge la Linia:</option>
         <optgroup label="Barcelona - Vallès">
             <option value="L6">L6</option>
             <option value="L7">L7</option>
@@ -49,33 +100,27 @@
             <option value="R6">R6</option>
             <option value="R60">R60</option>
         </optgroup>
-            <optgroup label="Lleida - La Pobla">
-                <option value="S00">S00</option>
-            </optgroup>    
+        <optgroup label="Lleida - La Pobla">
+            <option value="S00">S00</option>
+        </optgroup>    
         </select>
     </div>
     </form>
     
-    
     <form id="formparadaOrigen">
     <div class="ui-field-contain">
         <label for="paradaOrigen">Parada Origen:</label>
-        <select name="paradaOrigen" id="paradaOrigen">
-    
-        </select>
+        <select name="paradaOrigen" id="paradaOrigen"></select>
     </div>
     </form>
     
     <form id="formparadaFinal">
     <div class="ui-field-contain">
         <label for="paradaFinal">Parada Final:</label>
-        <select name="paradaFinal" id="paradaFinal">
-
-        </select>
+        <select name="paradaFinal" id="paradaFinal"></select>
     </div>
     </form>
     
-
     </div><!-- /content -->
 
     
@@ -83,15 +128,15 @@
     <div class="footers ui-grid-b">
         <div class="ui-block-a">
             <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a>
+                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
-            <a data-role="button" href="#ruta" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a>
+            <a data-role="button" href="#iniciaRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -99,54 +144,67 @@
     <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
+			<li><a href="#iniciaRuta">Principal</a></li>
 			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a></li>
+            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
 			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a></li>
+            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
             <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a></li>
+                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
             <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
     
 </div>
-                    <!-- End of 1st page "Pagina Principal"-->
-                    <!-- Start of 2nd page "Pagina de Ruta"-->
+                    <!-- End of 1st page "Pagina iniciaRuta"-->
+                    <!-- Start of 2nd page "Pagina de onRuta"-->
     
-<div data-role="page" data-title="Panel fixed positioning" id="ruta" data-url="ruta"  class="pageMain">
+<div data-role="page" data-title="Panel fixed positioning" id="onRuta" data-url="onRuta">
 	<div data-role="header">
     <div class="ui-grid-b headers">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
-        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel1"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
         <div class="ui-block-c datas" id="data1"></div>
      </div>
 	</div><!-- /header -->
     
-<div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content pageMain" > 
 
-    <h1>RUTA COMPLETA</h1>
-    <div id="rutaParadas">Se inserta aqui</div>
+    
+    <div id="rutaParadas">rutaParadas</div>
     <p>-------------------------------</p>
-    <div>Menu 3 paradas</div>
-    <div>Foto Parada</div>
-    <div>Foto Parada</div>
-    <div>Horarios</div>
+    
+    <img src="img/FueraDeRuta.png" alt="navOut">
+    
+    <div id="paradaOrigen">paradaOrigen</div>
+    <div>
+        
+        <div id="foto">Foto Parada</div>
+     
+        <div>
+        <div id="masfoto">+FOTO</div>
+        <div id="info">+INFO</div>
+        <div id="horarios">Horarios</div>
+        </div>
+    </div>
+        
+        
+        
 </div><!-- /content -->
     
 	<div data-role="footer" data-position="fixed">
     <div class="footers ui-grid-b">
         <div class="ui-block-a">
             <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a>
+                <img class="imgFooter" src="img/BotonFavoritosAgregar.png"/></a>
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
-            <a data-role="button" href="#ruta" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a>
+            <a data-role="button" href="#iniciaRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -156,83 +214,28 @@
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
 			<li><a href="#principal">Principal</a></li>
 			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a></li>
+            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
 			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a></li>
+            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
             <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a></li>
+                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
             <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
 </div>
-                    <!-- End of 2nd page "Pagina de Ruta"-->
-                    <!-- Start of 3nd page "Pagina de Mapa"-->
-      
-<div data-role="page" data-title="Panel fixed positioning" id="mapa" data-url="mapa"  class="pageMain">
-	<div data-role="header">
-    <div class="ui-grid-b headers">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
-        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
-        <div class="ui-block-c datas" id="data2"></div>
-     </div>
-	</div><!-- /header -->
-   <div data-role="main" class="ui-content" > 
-       
-       MAPA
-       <div>
-        <button class="btn2" type="button" id="clearBtn" data-inline="true">Clear Map</button>
-        </div>
-       <div id="demo"></div>
-       <div id="id01"></div>
-       <div id="mapcanvas"></div>
-       
-        </div>
-	<!-- /content -->
-    
-	<div data-role="footer" data-position="fixed">
-    <div class="footers ui-grid-b">
-        <div class="ui-block-a">
-            <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a>
-        </div>
-        <div class="ui-block-b">
-            <a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a>
-        </div>
-        <div class="ui-block-c">
-            <a data-role="button" href="#ruta" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a>
-        </div>
-     </div>
-	</div><!-- /footer -->
-    
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
-		<ul data-role="listview">
-			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
-		</ul>
-	</div><!-- /panel -->
-  </div>  
-                    <!-- End of 3nd page "Pagina de Mapa"-->
+                    <!-- End of 2nd page "Pagina de OnRuta"-->
                     <!-- Start of 4th page "Pagina de Favoritos"-->
     
-<div data-role="page" data-title="Panel fixed positioning" id="favoritos" data-url="favoritos"  class="pageMain">
+<div data-role="page" data-title="Panel fixed positioning" id="favoritos" data-url="favoritos" >
 	<div data-role="header">
     <div class="ui-grid-b headers">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
-        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel3"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
         <div class="ui-block-c datas" id="data3"></div>
      </div>
 	</div><!-- /header -->
-<div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content pageMain" > 
 
     FAVORITOS
     
@@ -242,15 +245,15 @@
     <div class="footers ui-grid-b">
         <div class="ui-block-a">
             <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a>
+                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
-            <a data-role="button" href="#ruta" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a>
+            <a data-role="button" href="#iniciaRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -258,13 +261,13 @@
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel3">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
+			<li><a href="#iniciaRuta">Principal</a></li>
 			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a></li>
+            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
 			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a></li>
+            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
             <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a></li>
+                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
             <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
@@ -273,15 +276,15 @@
                     <!-- End of 4th page "Pagina de Favoritos"-->
                     <!-- Start of 5th page "Pagina de Opciones"-->
     
-<div data-role="page" data-title="Panel fixed positioning" id="opciones" data-url="opciones"  class="pageMain">
+<div data-role="page" data-title="Panel fixed positioning" id="opciones" data-url="opciones">
 	<div data-role="header">
     <div class="ui-grid-b">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/iconMenu.png"/></a></div>
-        <div class="ui-block-b"><img class="logo" src="./img/iconRenfe.png"/></div>
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
         <div class="ui-block-c datas" id="data4"></div>
      </div>
 	</div><!-- /header -->
-<div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content pageMain" id="pageMain">
   
     OPCIONES
 
@@ -290,15 +293,15 @@
     <div class="footers ui-grid-b">
         <div class="ui-block-a">
             <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a>
+                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
-            <a data-role="button" href="#ruta" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a>
+            <a data-role="button" href="#onRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -306,13 +309,13 @@
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
+			<li><a href="#iniciaRuta">Inicia Ruta</a></li>
 			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/iconRuta.png"/></a></li>
+            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
 			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/iconMap.png"/></a></li>
+            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
             <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/iconFav.png"/></a></li>
+                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
             <li><a href="#opciones">Opciones</a></li>
 		</ul>
 	</div><!-- /panel -->
@@ -343,6 +346,7 @@
       <script type="text/javascript" src="js/_s5.js"></script>
       <script type="text/javascript" src="js/_s8.js"></script>
       <script type="text/javascript" src="js/_s33.js"></script>
+      <script type="text/javascript" src="js/_z1.js"></script>
       
 
   </body>

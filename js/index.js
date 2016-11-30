@@ -9,6 +9,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        iniciaPaginaMapa();
     },
 
     // deviceready Event Handler
@@ -26,6 +27,20 @@ app.initialize();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function ScaleContentToDevice(){
+                scroll(0, 0);
+                var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+                $(".ui-content").height(content);
+}
+        
+$(document).on( "pagecontainershow", function(){
+        ScaleContentToDevice();        
+});
+        
+$(window).on("resize orientationchange", function(){
+        ScaleContentToDevice();
+});
+
 
 function hideAll(){
 $( "#formselectsublinia1" ).hide();
@@ -36,10 +51,10 @@ $( "#formparadaFinal" ).hide();
 $( "#b1" ).hide();  
 }
 
-var linia;
+
 var sublinia;
-var paradaOrigen;
-var paradaFinal;
+var paradaOrigen=0;
+var paradaFinal=0;
 var nombreArxivoLinia;
 
 
@@ -169,8 +184,8 @@ function goToMap(){
     jQuery( "#mapa" ).on( "pageload", iniciaPaginaMapa());
 }
 function goToRute(){
-    $.mobile.navigate( "#ruta" );
-    jQuery( "#ruta" ).on( "pageload", iniciaPaginaRuta());
+    $.mobile.navigate( "#iniciaRuta" );
+    jQuery( "#iniciaRuta" ).on( "pageload", iniciaPaginaRuta());
 }
 function goToFavs(){
     $.mobile.navigate( "#favoritos" );
@@ -189,8 +204,8 @@ document.getElementById("paradaFinal").addEventListener("change", function(){
     cargaRuta();
 });
 function cargaRuta(){
-    window.location.href='#ruta';
-    jQuery( "#ruta" ).on( "pageload", iniciaPaginaRuta());
+    window.location.href='#onRuta';
+    jQuery( "#onRuta" ).on( "pageload", iniciaPaginaRuta());
 }
 
 
@@ -220,12 +235,6 @@ function myTimer() {
 function myStopFunction() {
     clearInterval(myVar);
 }
-
-/*document.getElementById("b2").addEventListener("click", function(){
-  //window.location.href='#mapa';
-    $.mobile.navigate( "#mapa" );
-    jQuery( "#mapa" ).on( "pageload", iniciaPaginaMapa());
-});*/
 
 
 //window.location.href='#principal';

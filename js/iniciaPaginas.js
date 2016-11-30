@@ -5,23 +5,35 @@ function iniciaPaginaRuta() {
     //alert(paradaOrigen+' '+paradaFinal);
     
     var outas = "";
+    var foutas ="";
     var i,j;
     if (paradaOrigen<paradaFinal) {
         
-
-        for(i=paradaOrigen; i<=paradaFinal; i++) {
-        outas += nombreArxivoLinia[i].name + '</br>';
-        } 
+        outas += '<div>'+nombreArxivoLinia[paradaOrigen].name + '</div></br>';
+        outas += '<div>'+nombreArxivoLinia[paradaFinal].name + '</div>';
+         
     }else if(paradaOrigen>paradaFinal){
 
-        for(j=paradaOrigen; j>=paradaFinal; j--) {
-
-        outas += nombreArxivoLinia[j].name + '</br>';
-        }
+        outas += '<div>'+nombreArxivoLinia[paradaOrigen].name + '</div></br>';
+        outas += '<div>'+nombreArxivoLinia[paradaFinal].name + '</div>';
     }else{
-        outas +='La parada de inicio es igual a la parada de destino.';
+        outas +='Error obteniendo la ruta.';
     }
     document.getElementById("rutaParadas").innerHTML = outas;
+    
+    document.getElementById("paradaOrigen").innerHTML = '<div>Parada actual: '+nombreArxivoLinia[paradaOrigen].name + '</div>';
+    
+    if(nombreArxivoLinia[paradaOrigen].name=="Pl. Catalunya"){
+       foutas += '<img src="img/plcat.jpg" alt="Pl. Cat" height="300" width="300">';
+       document.getElementById("foto").innerHTML = foutas;
+       }else {
+        foutas += 'No hay imagen para esta parada.';
+       document.getElementById("foto").innerHTML = foutas;
+       }
+    
+    
+    
+    
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -60,16 +72,13 @@ function iniciaPaginaMapa(){
 
 ////////////////////////////////////////////////////////////////////////
 
-var icon ='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAADlSURBVDhPrZFBDsIwDARDn8AZbvT/D+LIGb4AbKQNU8chFWKkyom9WTtNeb65ny71y4j5mW4pf+BxXsvxdq3rZqiECoTCET7j+POEMrAJmx50b05ikcimY51YO5yQZjbJmilSO73yyGw06cZQInfUOh7yJNZlNMNvIjahKaPQunsUQZGwmYmmpLuyRVkD5iKuba5Msu4k08t0+soZ0YyTd4Yq+suIee8V1Whht8yEOWnjdHFfJ9ShaGahImteR71QbskKNFHkno0yun/owzxI8xnpK7P7HhPSDGXCacQeM2k+A5TyAv9a7u0qyPyGAAAAAElFTkSuQmCC';//base64
-
+var icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAC9FBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB7FRQ7AAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAAbroAAG66AdbesRcAAAAHdElNRQfgCx4LKx6drI90AAAAPElEQVQoz2NgIBv8RgaYMkg0cXqQ2PSRIcFt1JVBCiGiZUi3B0nuAkbcYQ8CZAHc8XMHTeYdA64gJQUAAPmDp1MGEJ1OAAAAAElFTkSuQmCC';
 
 var myMap;
-var latPropia; 
-var longPropia;
+
 function initMapMeu(latitud,longitud) {
     
-    latPropia=latitud; 
-    longPropia=longitud;
+
     $('#mapcanvas').css('height', $('.ons-page-inner:last').height() + 250);
   // Define a div tag with id="map_canvas"
 var mapDiv = document.getElementById("mapcanvas");
@@ -89,17 +98,30 @@ $("#clearBtn").click(function() {
 
 function onMapInitMeu(map) {
 // Move to the position with animation
+document.getElementById("pageMain").style.backgroundColor = "none";
+map.setBackgroundColor("powderblue");
   map.animateCamera({
   target: {
-    lat: latPropia,
-    lng: longPropia
+    lat: latiPropia,
+    lng: longiPropia
   },
   zoom: 15
 }, function() {
       
       });
 }
-const GORYOKAKU_POINTS = [
+
+function cargaRutaRand(arrIni){
+    nombreArxivoLinia=arrIni;
+        var arrMeva=[];
+        for (var k = 0; k<nombreArxivoLinia.length; k++) {
+          //alert("entra for ");
+          
+          var currentPos= new plugin.google.maps.LatLng(nombreArxivoLinia[k]['latitut'],nombreArxivoLinia[k]['longitud']);
+            arrMeva[k]=currentPos;
+        }
+}
+/*const GORYOKAKU_POINTS = [
       new plugin.google.maps.LatLng(41.79883, 140.75675),
       new plugin.google.maps.LatLng(41.799240000000005, 140.75875000000002),
       new plugin.google.maps.LatLng(41.797650000000004, 140.75905),
@@ -113,7 +135,7 @@ const GORYOKAKU_POINTS = [
       new plugin.google.maps.LatLng(41.79744, 140.75454000000002),
       new plugin.google.maps.LatLng(41.79909000000001, 140.75465),
       new plugin.google.maps.LatLng(41.79883, 140.75673)
-    ];
+    ];*/
 function onMapReadyMeu(map){
    
     var arrMeu=[];
@@ -139,7 +161,7 @@ function onMapReadyMeu(map){
                 arrMeu[i]=currentPos;
 
 
-                map.addPolygon({
+                /*map.addPolygon({
           'points': GORYOKAKU_POINTS,
           'strokeColor' : '#AA00FF',
           'strokeWidth': 5,
@@ -148,7 +170,7 @@ function onMapReadyMeu(map){
           map.animateCamera({
             'target': polygon.getPoints()
           });
-        });
+        });*/
 
     } 
     }else if(paradaOrigen>paradaFinal){
@@ -166,27 +188,28 @@ function onMapReadyMeu(map){
               marker.showInfoWindow();
 
             });
+            
         }
     }else{
         nombreArxivoLinia=myArrayParadasz1;
         for (var k = 0; k<nombreArxivoLinia.length; k++) {
           //alert("entra for ");
-          if(nombreArxivoLinia[k].icon==1){
-              var currentIcon=icon;
-          }else if(nombreArxivoLinia[k].icon==2){
-              var currentIcon=icon;
-          } 
+          
           var currentPos= new plugin.google.maps.LatLng(nombreArxivoLinia[k]['latitut'],nombreArxivoLinia[k]['longitud']);
           map.addMarker({
             position: currentPos,
             icon:icon,
             map: map,
-            title: nombreArxivoLinia[K]['name']
+            title: nombreArxivoLinia[k]['name']
     }, function(marker) {
-
-      marker.showInfoWindow();
-
     });
         }
-    }
+/*map.animateCamera({
+  target: {
+    lat: nombreArxivoLinia[0]['latitut'],
+    lng: nombreArxivoLinia[0]['longitud']
+  },
+  zoom: 10
+});*/
+}
 }
