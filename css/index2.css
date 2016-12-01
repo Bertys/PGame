@@ -1,14 +1,70 @@
 .headers {
-        background: yellow !important;
-        float: inherit !important;
+        background: #04273f !important;
+        display: block!important;
+        max-height: 355px;
+        float:none;
 }
 .pageMain {
   /* background: linear-gradient(yellow, green);
     background-color: powderblue !important;
     */
-    background-color: powderblue;
+    background-color: #0b5f7c;
+    color: aliceblue;
 }
-/*img {
+.footers{
+    background-color: #04273f !important;
+    display: flex !important;
+}
+.datas{
+    padding: 5% 5% 5% 5% !important;
+    text-align: center;
+    color: aliceblue;
+    float: right;
+}
+a{
+    background-color: #04273f !important;
+}
+.imgMenu{
+    padding: 2% 2% 2% 2% !important;
+    width:40% !important;
+    height:40% !important;
+}
+
+.imgFooter{
+    width:25% !important;
+    height:25% !important;
+}
+
+.logo{
+    width:60%!important;
+    height:60% !important;
+    padding: 15% 15% 15% 15%;
+}
+#buttons{
+    display: flex !important;
+}
+
+#navParadas{
+    height:5% !important;
+}
+#rutaParadas{
+    align-content: center;
+}
+#mesFotos{
+    float: left !important;
+}
+#mesInfo{
+    float: right !important;
+}
+#fotoParada{
+    float: inherit!important;
+    width:100%!important;
+    height:100% !important;
+}
+/*#foto{
+    float: left!important;
+}
+img {
     max-width: 500px;
     width:25% !important;
     height:25% !important;
@@ -16,32 +72,13 @@
 
 opacity: 0.5;
 }*/
-.datas{
-    padding: 5%;
-}
-.footers{
-    background-color: lightslategrey !important;
-    float: inherit;
-}
-a{
-    background-color: lightslategrey !important;
-}
 
 
 
-.imgMenu{
-    width:10% !important;
-    height:10% !important;
-}
-.logo{
-    width:45% !important;
-    height:45% !important;
-    padding: 5%;
-}
-.imgFooter{
-    width:25% !important;
-    height:25% !important;
-}
+
+/*
+
+
 #rutaParadas{
     float:inherit;
     align-content: flex-end;
@@ -51,4 +88,4 @@ a{
     width: 75px;
     height: 75px;
     border: 3px solid #73AD21;  
-}
+}*/

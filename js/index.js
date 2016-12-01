@@ -190,6 +190,7 @@ function goToRute(){
 function goToFavs(){
     $.mobile.navigate( "#favoritos" );
     jQuery( "#favoritos" ).on( "pageload", iniciaPaginaFavoritos());
+    
 }
 
 

@@ -25,10 +25,14 @@
 	</div><!-- /header -->
    <div data-role="main" class="ui-content pageMain" > 
        
-       <div id="mapcanvas"></div>
-        <div>
-        <button class="btn2" type="button" id="clearBtn" data-inline="true">Clear Map</button>
+       
+        <div id="buttons">
+        <button class="btn2" type="button" id="clearBtn" data-inline="true">eteja mapa</button>
+        <button class="btn2" type="button" id="mesProxima" data-inline="true">Buscar Parada més propera</button>
         </div>
+       
+       <div id="mapcanvas"></div>
+       <div id="result"></div>
         </div>
 	<!-- /content -->
     
@@ -40,11 +44,11 @@
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
             <a data-role="button" onclick=goToRute()>
-            <img class="imgFooter" src="img/BotonRutaSeleccionado.png"/></a>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -52,14 +56,9 @@
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel2">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#iniciaRuta">iniciaRuta</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-            <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
 		</ul>
 	</div><!-- /panel -->
   </div>  
@@ -136,7 +135,7 @@
         </div>
         <div class="ui-block-c">
             <a data-role="button" href="#iniciaRuta" onclick=goToRute()>
-            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
+            <img class="imgFooter" src="img/BotonRutaSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -144,14 +143,9 @@
     <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#iniciaRuta">Principal</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
 		</ul>
 	</div><!-- /panel -->
     
@@ -172,18 +166,20 @@
 
     
     <div id="rutaParadas">rutaParadas</div>
-    <p>-------------------------------</p>
+
     
-    <img src="img/FueraDeRuta.png" alt="navOut">
+    <img id="navParadas" src="img/FueraDeRuta.png" alt="navOut">
     
-    <div id="paradaOrigen">paradaOrigen</div>
+    <div id="paradaOrigin">paradaOrigen</div>
     <div>
-        
+        <div><button class="btn3" type="button" id="mesFotos" data-inline="true">+Fotos</button>
+        <button class="btn3" type="button" id="mesInfo" data-inline="true">+Info</button>
+        </div>
         <div id="foto">Foto Parada</div>
      
+        
+        
         <div>
-        <div id="masfoto">+FOTO</div>
-        <div id="info">+INFO</div>
         <div id="horarios">Horarios</div>
         </div>
     </div>
@@ -200,11 +196,11 @@
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
-            <img class="imgFooter" src="img/BotonMapaSeleccionado.png"/></a>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
         </div>
         <div class="ui-block-c">
             <a data-role="button" href="#iniciaRuta" onclick=goToRute()>
-            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
+            <img class="imgFooter" src="img/BotonRutaSeleccionado.png"/></a>
         </div>
      </div>
 	</div><!-- /footer -->
@@ -212,14 +208,9 @@
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel1">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#principal">Principal</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
@@ -245,7 +236,7 @@
     <div class="footers ui-grid-b">
         <div class="ui-block-a">
             <a data-role="button" href="#favoritos" onclick=goToFavs()>
-                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
+                <img class="imgFooter" src="img/BotonFavoritosSeleccionado.png"/></a>
         </div>
         <div class="ui-block-b">
             <a data-role="button" onclick=goToMap()>
@@ -261,14 +252,9 @@
 	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel3">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#iniciaRuta">Principal</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
@@ -276,10 +262,96 @@
                     <!-- End of 4th page "Pagina de Favoritos"-->
                     <!-- Start of 5th page "Pagina de Opciones"-->
     
-<div data-role="page" data-title="Panel fixed positioning" id="opciones" data-url="opciones">
+<div data-role="page" data-title="Panel fixed positioning" id="alertes" data-url="alertes">
 	<div data-role="header">
     <div class="ui-grid-b">
-        <div class="ui-block-a"><a data-role="button" href="#nav-panel"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel4"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
+        <div class="ui-block-c datas" id="data4"></div>
+     </div>
+	</div><!-- /header -->
+<div data-role="main" class="ui-content pageMain" id="pageMain">
+  
+    alertes
+
+</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#onRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
+</div>
+                    <!-- End of 5th page "Pagina de Opciones"-->
+      <!-- Start of 5th page "Pagina de Opciones"-->
+    
+<div data-role="page" data-title="Panel fixed positioning" id="xxss" data-url="xxss">
+	<div data-role="header">
+    <div class="ui-grid-b">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel5"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
+        <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
+        <div class="ui-block-c datas" id="data4"></div>
+     </div>
+	</div><!-- /header -->
+<div data-role="main" class="ui-content pageMain" id="pageMain">
+  
+    xarxes socials
+
+</div><!-- /content -->
+	<div data-role="footer" data-position="fixed">
+    <div class="footers ui-grid-b">
+        <div class="ui-block-a">
+            <a data-role="button" href="#favoritos" onclick=goToFavs()>
+                <img class="imgFooter" src="img/BotonFavoritosNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-b">
+            <a data-role="button" onclick=goToMap()>
+            <img class="imgFooter" src="img/BotonMapaNoSeleccionado.png"/></a>
+        </div>
+        <div class="ui-block-c">
+            <a data-role="button" href="#onRuta" onclick=goToRute()>
+            <img class="imgFooter" src="img/BotonRutaNoSeleccionado.png"/></a>
+        </div>
+     </div>
+	</div><!-- /footer -->
+ 
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel5">
+		<ul data-role="listview">
+			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
+		</ul>
+	</div><!-- /panel -->
+			  
+</div>
+                    <!-- End of 5th page "Pagina de Opciones"-->
+      <!-- Start of 5th page "Pagina de Opciones"-->
+    
+<div data-role="page" data-title="Panel fixed positioning" id="idiomes" data-url="idiomes">
+	<div data-role="header">
+    <div class="ui-grid-b">
+        <div class="ui-block-a"><a data-role="button" href="#nav-panel6"><img class="imgMenu" src="img/BotonMenuOpciones.png"/></a></div>
         <div class="ui-block-b"><img class="logo" src="./img/Logo.png"/></div>
         <div class="ui-block-c datas" id="data4"></div>
      </div>
@@ -306,17 +378,12 @@
      </div>
 	</div><!-- /footer -->
  
-	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel4">
+	<div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel6">
 		<ul data-role="listview">
 			<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
-			<li><a href="#iniciaRuta">Inicia Ruta</a></li>
-			<li><a data-role="button" onclick=goToRute()>
-            <img src="img/BotonRutaNoSeleccionado.png"/></a></li>
-			<li><a data-role="button" onclick=goToMap()>
-            <img src="img/BotonMapaNoSeleccionado.png"/></a></li>
-            <li><a data-role="button" onclick=goToFavs()>
-                <img src="img/BotonFavoritosNoSeleccionado.png"/></a></li>
-            <li><a href="#opciones">Opciones</a></li>
+			<li><a href="#idiomes">Idiomes</a></li>
+            <li><a href="#xxss">Xarxes Socials</a></li>
+            <li><a href="#alertes">Alertes</a></li>
 		</ul>
 	</div><!-- /panel -->
 			  
@@ -325,10 +392,9 @@
       
     <script type="text/javascript" src="cordova.js"></script>
     
-      <script type="text/javascript" src="js/iniciaPaginas.js"></script>
-      <script type="text/javascript" src="js/geo.js"></script>
-      <script type="text/javascript" src="js/cargaMapa.js"></script>
-      <script type="text/javascript" src="js/buscaparadas.js"></script>
+      <script type="text/javascript" src="js/iniciaPaginaRuta.js"></script>
+      <script type="text/javascript" src="js/iniciaPaginaMapa.js"></script>
+
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/_s55.js"></script>
       <script type="text/javascript" src="js/_s00.js"></script>
